@@ -185,7 +185,7 @@ export const DATA = {
         "",
     },
     {
-      title: "ChatDb - Chat with your database",
+      title: "ChatDB - Chat with your database",
       href: "https://chatdb-gray.vercel.app/",
       dates: "Apr 2025 - May 2025",
       active: true,
@@ -269,7 +269,7 @@ export const DATA = {
       dates: "Dec 12th - 13th, 2024",
       location: "IIT Bhilai, C.G",
       description:
-        "Developed a mobile application which delivered bedtime stories to children using augmented reality.",
+        "",
       image:
         "/iitbhilai.png",
       mlh: "",
@@ -280,7 +280,7 @@ export const DATA = {
       dates: "Apr 1st - 2nd, 2025",
       location: "Durg, C.G",
       description:
-        "Developed a mobile application which delivers university campus wide events in real time to all students.",
+        "",
       image:
         "/hackindia.png",
       mlh: "",
@@ -291,7 +291,7 @@ export const DATA = {
       dates: "May 18, 2018",
       location: "Durg, C.G",
       description:
-        "Developed a mobile application which communcicates a victims medical data from inside an ambulance to doctors at hospital.",
+        "",
       icon: "public",
       image:
         "/techxsurvival.jpg",
