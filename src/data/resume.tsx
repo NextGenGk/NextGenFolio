@@ -208,7 +208,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://xy-storage-data-reimagined.vercel.app",
+          href: "https://www.kapoorabeer.me/",
           icon: <Icons.globe className="size-3" />,
         },
         {
