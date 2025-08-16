@@ -239,7 +239,7 @@ export default function Page() {
   >
     ping me on LinkedIn
   </Link>
-  — just keep it real. I’ll reply when I’m not busy being awesome. 😏 Spam or salesy stuff? Straight to the void. 🕳️✨
+  — just keep it real. I’ll reply when I’m not busy being awesome.
 </p>
 
             </div>

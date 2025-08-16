@@ -18,16 +18,15 @@ export const DATA = {
     "Typescript",
     "Node.js",
     "Python",
-    "Go",
     "Postgres",
     "Docker",
-    "Kubernetes",
+    "AWS",
     "Java",
     "C++",
+    "Supabase",
+    "Mongo DB",
   ],
-  navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" }
-  ],
+  navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
     email: "hello@example.com",
     tel: "+123456789",
@@ -85,7 +84,7 @@ export const DATA = {
         "Developed web applications and features to enhance user experience.",
         "Ensured websites are responsive and accessible across various devices and platforms.",
         "Implemented responsive design techniques to optimize user experience on desktops, tablets, and mobile devices.",
-        "Conducted thorough testing of websites and web applications to identify and fix bugs, errors, or issues."
+        "Conducted thorough testing of websites and web applications to identify and fix bugs, errors, or issues.",
       ],
     },
   ],
@@ -159,16 +158,17 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Ultimate Code Editor",
+      title: "CodeSprint - An Ultimate Code Editor",
       href: "https://codeeditor.devgaurav.me/",
       dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
-        "A lightweight, browser-based code editor built with modern web technologies. Supports syntax highlighting, real-time code execution, multiple programming languages, and a sleek, responsive UI—perfect for learning, testing, and building small code snippets.",
+        "A LeetCode-like coding platform built with Next.js, TypeScript, and Tailwind CSS, where you can add your own questions, practice them, search problems, solve using the Monaco editor, run/submit via Judge0, and track progress with user authentication—all in a clean, responsive UI.",
       technologies: [
         "Next.js",
         "Typescript",
         "Supabase",
+        "Clerk",
         "TailwindCSS",
         "Shadcn UI",
         "Judge0",
@@ -179,35 +179,76 @@ export const DATA = {
           href: "https://codeeditor.devgaurav.me/",
           icon: <Icons.globe className="size-3" />,
         },
+        {
+          type: "Source",
+          href: "https://github.com/NextGenGk/Code-Sprint-An-Ultimate-Code-Editor-For-Devs",
+          icon: <Icons.github className="size-3" />,
+        },
       ],
       image: "/code-editor.png",
-      video:
-        "",
+      video: "",
     },
     {
-      title: "ChatDB - Chat with your database",
-      href: "https://chatdb-gray.vercel.app/",
+      title: "XyStorage - Data Reimagined",
+      href: "hhttps://xy-storage-data-reimagined.vercel.app/",
       dates: "Apr 2025 - May 2025",
       active: true,
       description:
-        "ChatDB - Your Personal Database Assistant is a real-time web application that allows users to interact with a database using natural language. It leverages AI to convert user input into SQL queries and display the results in an intuitive chat-like interface.",
+        "XyStorage is a fast, secure, and developer-first cloud storage solution designed to scale with your applications. Whether you're building a SaaS product, managing large datasets, or delivering content at scale, XyStorage gives you the tools you need to store, access, and manage files with ease.",
       technologies: [
-        "React",
+        "Next.Js",
         "Typescript",
-        "Postgres",
+        "AWS SDK",
+        "AWS S3",
+        "Supabase",
+        "Clerk",
         "TailwindCSS",
         "Shadcn UI",
       ],
       links: [
         {
           type: "Website",
-          href: "https://chatdb-gray.vercel.app/",
+          href: "https://xy-storage-data-reimagined.vercel.app",
           icon: <Icons.globe className="size-3" />,
         },
+        {
+          type: "Source",
+          href: "https://github.com/NextGenGk/XyStorage-Data-Reimagined",
+          icon: <Icons.github className="size-3" />,
+        },
       ],
-      image: "/chatdb.png",
-      video:
-        "",
+      image: "/storage.png",
+      video: "",
+    },
+    {
+      title: "GitDocs - AI Powered Documentation Generator",
+      href: "https://www.gitdocs.xyz/",
+      dates: "June 2025 - June 2025",
+      active: true,
+      description:
+        "Paste any GitHub repository link and get a fully formatted README.md in seconds. Includes project title, badges, features, installation steps, usage guide, license, contribution instructions, and contact info — all in clean, structured Markdown. Ideal for open-source projects, portfolios, and hackathons.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Supabase",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Google Gemini",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.gitdocs.xyz/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/NextGenGk/GitDocs-AI-Powered-Readme-Generator",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/gitdocs.png",
+      video: "",
     },
     {
       title: "Teaching Assistant - SaaS",
@@ -233,34 +274,7 @@ export const DATA = {
         },
       ],
       image: "/teaching-assistant.png",
-      video:
-        "",
-    },
-    {
-      title: "GitDocs - AI Powered Documentation Generator",
-      href: "https://www.gitdocs.xyz/",
-      dates: "June 2025 - June 2025",
-      active: true,
-      description:
-        "Paste any GitHub repository link and get a fully formatted README.md in seconds. Includes project title, badges, features, installation steps, usage guide, license, contribution instructions, and contact info — all in clean, structured Markdown. Ideal for open-source projects, portfolios, and hackathons.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "Supabase",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Google Gemini",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://www.gitdocs.xyz/",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "/gitdocs.png",
-      video:
-        "",
+      video: "",
     },
   ],
   hackathons: [
@@ -268,10 +282,8 @@ export const DATA = {
       title: "Youth Conclave 2024 (INAE Innovation Hackathon - IIT Bhilai)",
       dates: "Dec 12th - 13th, 2024",
       location: "IIT Bhilai, C.G",
-      description:
-        "",
-      image:
-        "/iitbhilai.png",
+      description: "",
+      image: "/iitbhilai.png",
       mlh: "",
       links: [],
     },
@@ -279,10 +291,8 @@ export const DATA = {
       title: "HackIndia Hacakthon 2025",
       dates: "Apr 1st - 2nd, 2025",
       location: "Durg, C.G",
-      description:
-        "",
-      image:
-        "/hackindia.png",
+      description: "",
+      image: "/hackindia.png",
       mlh: "",
       links: [],
     },
@@ -290,11 +300,9 @@ export const DATA = {
       title: "Tech x Survival Hackathon (Organized by IEEE Durg)",
       dates: "May 18, 2018",
       location: "Durg, C.G",
-      description:
-        "",
+      description: "",
       icon: "public",
-      image:
-        "/techxsurvival.jpg",
+      image: "/techxsurvival.jpg",
       links: [],
     },
   ],
