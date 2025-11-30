@@ -13,6 +13,8 @@ interface Props {
     title: string;
     href: string;
   }[];
+  win?: string;
+  offline?: boolean;
 }
 
 export function HackathonCard({
@@ -22,6 +24,8 @@ export function HackathonCard({
   location,
   image,
   links,
+  win,
+  offline,
 }: Props) {
   return (
     <li className="relative ml-10 py-4">
@@ -36,6 +40,12 @@ export function HackathonCard({
           <time className="text-xs text-muted-foreground">{dates}</time>
         )}
         <h2 className="font-semibold leading-none">{title}</h2>
+        {win && <span className="text-sm text-yellow-500 font-bold">{win}</span>}
+        {offline !== undefined && (
+          <span className="text-xs bg-secondary px-2 py-0.5 rounded-md w-fit">
+            {offline ? "Offline" : "Online"}
+          </span>
+        )}
         {location && (
           <p className="text-sm text-muted-foreground">{location}</p>
         )}

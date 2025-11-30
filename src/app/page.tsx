@@ -184,11 +184,11 @@ export default function Page() {
                   Hackathons
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Where Ideas Come to Life
+                  Where Ideas Come to Life
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                During university, I attended {DATA.hackathons.length}+ hackathons, where teams from across the country
-                built impressive projects in just 2–3 days. It was inspiring to see what passionate people could achieve together.
+                  During university, I attended {DATA.hackathons.length}+ hackathons, where teams from across the country
+                  built impressive projects in just 2–3 days. It was inspiring to see what passionate people could achieve together.
                 </p>
               </div>
             </div>
@@ -207,6 +207,8 @@ export default function Page() {
                     dates={project.dates}
                     image={project.image}
                     links={project.links}
+                    win={project.win}
+                    offline={project.offline}
                   />
                 </BlurFade>
               ))}
@@ -225,22 +227,22 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-  Got something on your mind? Slide into my DMs{" "}
-  <Link
-    href={DATA.contact.social.X.url}
-    className="text-blue-500 hover:underline"
-  >
-    on Twitter
-  </Link>{" "}
-  or{" "}
-  <Link
-    href={DATA.contact.social.LinkedIn.url}
-    className="text-blue-500 hover:underline"
-  >
-    ping me on LinkedIn
-  </Link>
-  — just keep it real. I’ll reply when I’m not busy being awesome.
-</p>
+                Got something on your mind? Slide into my DMs{" "}
+                <Link
+                  href={DATA.contact.social.X.url}
+                  className="text-blue-500 hover:underline"
+                >
+                  on Twitter
+                </Link>{" "}
+                or{" "}
+                <Link
+                  href={DATA.contact.social.LinkedIn.url}
+                  className="text-blue-500 hover:underline"
+                >
+                  ping me on LinkedIn
+                </Link>
+                — just keep it real. I’ll reply when I’m not busy being awesome.
+              </p>
 
             </div>
           </BlurFade>
