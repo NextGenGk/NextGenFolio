@@ -54,7 +54,7 @@ export default function Page() {
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <div className="group relative size-28 [perspective:1000px] cursor-pointer">
-                <div className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] animate-flip-on-load">
                   {/* Front */}
                   <Avatar className="absolute inset-0 size-28 border [backface-visibility:hidden]">
                     <AvatarImage alt={DATA.name} src="/gaurav.png" />
