@@ -1,0 +1,33 @@
+name: Sync GitHub Contributions
+
+on:
+  schedule:
+    # Run at 00:00 IST (18:30 UTC) every day
+    - cron: '30 18 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-contributions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch contributions
+        run: |
+          mkdir -p src/data
+          curl -s https://github-contributions-api.jogruber.de/v4/NextGenGK?y=last -o src/data/contributions.json
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --quiet || echo "modified=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: steps.git-check.outputs.modified == 'true'
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/data/contributions.json
+          git commit -m "chore: sync github contributions"
+          git push

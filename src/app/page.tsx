@@ -8,6 +8,10 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { GithubGraph } from "@/components/github-graph";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { ArrowUpRight } from "lucide-react";
+
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -24,17 +28,45 @@ export default function Page() {
                 yOffset={8}
                 text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
               />
-              <BlurFadeText
-                className="max-w-[600px] md:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              />
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <Markdown 
+                  className="prose max-w-[600px] text-base md:text-lg font-sans text-foreground dark:prose-invert prose-a:no-underline prose-a:text-foreground hover:prose-a:cursor-pointer"
+                  components={{
+                    a: ({ href, children }) => (
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <a href={href} target="_blank" rel="noopener noreferrer">
+                            {children}
+                          </a>
+                        </TooltipTrigger>
+                        <TooltipContent className="py-1 px-2">
+                          <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-xs !text-primary-foreground">
+                            {href} <ArrowUpRight className="h-3 w-3" />
+                          </a>
+                        </TooltipContent>
+                      </Tooltip>
+                    )
+                  }}
+                >
+                  {DATA.description}
+                </Markdown>
+              </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+              <div className="group relative size-28 [perspective:1000px] cursor-pointer">
+                <div className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front */}
+                  <Avatar className="absolute inset-0 size-28 border [backface-visibility:hidden]">
+                    <AvatarImage alt={DATA.name} src="/gaurav.png" />
+                    <AvatarFallback>{DATA.initials}</AvatarFallback>
+                  </Avatar>
+                  {/* Back */}
+                  <Avatar className="absolute inset-0 size-28 border [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                    <AvatarImage alt={DATA.name} src="/gaurav_profile.png" />
+                    <AvatarFallback>{DATA.initials}</AvatarFallback>
+                  </Avatar>
+                </div>
+              </div>
             </BlurFade>
           </div>
         </div>
@@ -47,6 +79,12 @@ export default function Page() {
           <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
             {DATA.summary}
           </Markdown>
+        </BlurFade>
+      </section>
+      <section id="contributions">
+        <BlurFade delay={BLUR_FADE_DELAY * 4.5}>
+          <h2 className="text-xl font-bold mb-4">Contributions</h2>
+          <GithubGraph account="NextGenGK" />
         </BlurFade>
       </section>
       <section id="work">
@@ -69,6 +107,31 @@ export default function Page() {
                 badges={work.badges}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      <section id="leadership">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 6}>
+            <h2 className="text-xl font-bold">Leadership & Community Experience</h2>
+          </BlurFade>
+          {DATA.leadership.map((item, id) => (
+            <BlurFade
+              key={item.company}
+              delay={BLUR_FADE_DELAY * 7 + id * 0.05}
+            >
+              <ResumeCard
+                key={item.company}
+                logoUrl={item.logoUrl}
+                altText={item.company}
+                title={item.company}
+                subtitle={item.title}
+                href={item.href}
+                badges={item.badges}
+                period={`${item.start} - ${item.end ?? "Present"}`}
+                description={item.description}
               />
             </BlurFade>
           ))}
